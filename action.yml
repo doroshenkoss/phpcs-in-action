@@ -1,5 +1,5 @@
 # action.yml
-name: 'PHPCS for your awesome PHP project'
+name: 'PHPCS in Action'
 description: 'Run phpcs'
 runs:
   using: 'docker'
