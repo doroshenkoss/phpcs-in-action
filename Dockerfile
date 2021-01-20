@@ -1,8 +1,12 @@
-# Container image that runs your code
-FROM alpine:3.10
+FROM php:7.1-alpine
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+LABEL "com.github.actions.name"="Serjio phpcs"
+LABEL "com.github.actions.description"="check php coding standards"
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
+
+RUN wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar -O phpcs \
+    && chmod a+x phpcs \
+    && mv phpcs /usr/local/bin/phpcs
+
+ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
