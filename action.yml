@@ -1,9 +1,6 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+name: 'PHPCS for your awesome PHP project'
+description: 'Run phpcs'
 runs:
   using: 'docker'
   image: 'Dockerfile'
