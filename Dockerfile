@@ -5,7 +5,8 @@ LABEL "com.github.actions.description"="check php coding standards"
 
 RUN wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar -O phpcs \
     && chmod a+x phpcs \
-    && mv phpcs /usr/local/bin/phpcs
+    && mv phpcs /usr/local/bin/phpcs \
+    && apk add git
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
